@@ -1,0 +1,19 @@
+// 오른쪽의 = 뒤 문구만 고치세요. 실제 주소가 생길 때 URL도 입력하세요.
+window.resumeCopyRaw = window.resumeCopyRaw || {};
+window.resumeCopyRaw.contact = `
+eyebrow =
+heading = CONNECT.
+name = 모호성
+jobTitle = GAME DESIGNER
+emailLabel = EMAIL
+emailAddress = imvagueness@gmail.com
+phoneLabel = PHONE
+phoneNumber = 010-5119-8209
+githubLabel = GITHUB
+githubUrl = https://github.com/MoHoDu
+pdfLabel = PDF RESUME
+pdfUrl =
+signoff = 좋은 게임을 함께 만들고 싶습니다.
+footerName = 모호성 · MO HO SEONG
+backToTop = BACK TO TOP
+`;

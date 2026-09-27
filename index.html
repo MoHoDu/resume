@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="게임 디자이너 모호성의 포트폴리오와 이력서">
+  <title>모호성 — Game Designer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23090b10'/%3E%3Cpath d='M9 28V12h4l7 9 7-9h4v16h-5v-8l-6 7-6-7v8z' fill='%23c7ff5e'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content/intro.js" defer></script>
+  <script src="content/projects.js" defer></script>
+  <script src="content/how-i-work.js" defer></script>
+  <script src="content/experience.js" defer></script>
+  <script src="content/core-tools.js" defer></script>
+  <script src="content/play-style.js" defer></script>
+  <script src="content/about-me.js" defer></script>
+  <script src="content/contact.js" defer></script>
+  <script src="copy.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="projects.js" defer></script>
+  <script src="play-style.js" defer></script>
+</head>
+<body>
+  <main id="top">
+    <section class="resume-frame design-a" id="resumeFrame" aria-label="모호성 게임 디자이너 소개">
+      <div class="scene" id="scene">
+        <img class="scene-media" id="gameFrame" src="assets/intro-octoplug.jpg" alt="Octoplug 게임 장면" data-frame-at="108">
+        <div class="scene-shade"></div>
+        <div class="scene-grain"></div>
+        <header class="site-nav">
+          <a href="#top" class="site-logo">모호성<span>®</span></a>
+          <div class="site-links"><a href="#projects">PROJECTS</a><a href="#experience">EXPERIENCE</a><a href="#about">ABOUT</a><a href="#contact">CONTACT <span>↗</span></a></div>
+        </header>
+
+        <div class="hero-copy" id="heroCopy">
+          <div class="hero-kicker"><span class="live-dot"></span> GAME DESIGNER <span class="kicker-line"></span> SEOUL, KR</div>
+          <h2><span class="hero-name-kr">모호성</span><small>MO HO SEONG</small><span class="hero-period">.</span></h2>
+          <p class="hero-description">직접 만들고, 팀과 협업하고,<br>플레이 결과를 확인하며 고칩니다.</p>
+          <a class="hero-link" href="#projects">프로젝트 보기 <span>↓</span></a>
+        </div>
+
+        <aside class="project-card" id="projectCard" aria-live="polite">
+          <div class="project-card-top"><span id="projectCategory">PUZZLE · SOLO</span><span id="projectNumber">01 / 04</span></div>
+          <h3 id="projectTitle">OCTOPLUG</h3>
+          <div class="project-card-bottom"><span id="projectDescriptor">A small world of connections</span><span class="project-mark">↗</span></div>
+        </aside>
+
+        <div class="hero-footer">
+          <span>SELECTED WORKS <span class="footer-line"></span> 2022—2026</span>
+          <div class="carousel-controls" aria-label="프로젝트 영상 제어">
+            <button class="control-button" id="previous" aria-label="이전 프로젝트">←</button>
+            <button class="control-button pause-button" id="pause" aria-label="자동 재생 일시 정지">Ⅱ</button>
+            <button class="control-button" id="next" aria-label="다음 프로젝트">→</button>
+          </div>
+          <span class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><span id="progressFill"></span></div>
+      </div>
+    </section>
+
+    <section class="projects-comparison" id="projects" aria-labelledby="projectsTitle">
+      <header class="projects-intro">
+        <div>
+          <span class="eyebrow">02 / SELECTED PROJECTS</span>
+          <h2 id="projectsTitle">선택한 게임을 한눈에.</h2>
+          <p>카드를 누르면 선택한 프로젝트가 대표 영역으로 올라옵니다. 핵심 정보와 링크는 마우스를 올리지 않아도 바로 확인할 수 있습니다.</p>
+        </div>
+        <span class="projects-guide">SELECT A PROJECT <span aria-hidden="true">↓</span></span>
+      </header>
+
+      <div class="interactive-projects" aria-live="polite">
+        <article class="project-hero-card" id="featuredProject" data-project="octoplug">
+          <div class="project-media featured-media">
+            <video id="featuredVideo" muted loop playsinline preload="metadata" src="assets/octoplug-web.mp4" poster="assets/intro-octoplug.jpg" aria-label="Octoplug 플레이 영상"></video>
+            <img id="featuredImage" src="assets/namer_play.gif" alt="" hidden>
+            <span class="featured-label">SELECTED / <span id="featuredIndex">01</span></span>
+          </div>
+          <div class="project-info">
+            <div class="project-title-line"><span id="featuredType">PUZZLE · SOLO</span><h3 id="featuredTitle">Octoplug</h3></div>
+            <p class="project-period" id="featuredPeriod" hidden></p>
+            <p class="project-one-line" id="featuredSummary">플러그를 연결하고 전력의 흐름을 설계하는 퍼즐 게임.</p>
+            <dl class="project-meta">
+              <div><dt>장르</dt><dd id="featuredGenre">Puzzle</dd></div>
+              <div><dt>구성</dt><dd id="featuredTeam">개인 프로젝트</dd></div>
+              <div><dt>역할</dt><dd id="featuredRole">기획 · 개발</dd></div>
+            </dl>
+            <div class="project-more"><span>CORE</span><p id="featuredCore">연결 규칙 설계 · 단계별 퍼즐 구조 · Unity 프로토타이핑</p></div>
+            <div class="project-actions" aria-label="프로젝트 외부 링크"><a href="#" data-project-link="play">PLAY</a><a href="#" data-project-link="github">GITHUB</a><a href="#" data-project-link="video">VIDEO</a></div>
+            <a class="view-project-link" href="#" data-project-link="detail">VIEW PROJECT <span>↗</span></a>
+          </div>
+        </article>
+
+        <div class="project-card-grid" id="projectCardGrid" aria-label="다른 프로젝트 선택"></div>
+      </div>
+
+      <footer class="about-footer"><span>모호성 · MO HO SEONG · GAME DESIGNER</span><span>SELECTED PROJECTS · 2026</span></footer>
+    </section>
+
+    <section class="work-comparison" id="how-i-work" aria-labelledby="workTitle">
+      <header class="work-intro">
+        <div>
+          <span class="eyebrow">03 / HOW I WORK</span>
+          <h2 id="workTitle">결과보다 먼저,<br>일하는 방식.</h2>
+          <p>협업의 기준을 맞추고, 플레이로 검증하며, 반복은 자동화합니다.</p>
+        </div>
+      </header>
+
+      <div class="work-view work-view-b" id="workViewB">
+        <article class="work-story work-story-collaborate">
+          <div class="work-story-media work-video-media">
+            <video muted loop playsinline preload="metadata" src="assets/dolleye-web.mp4" poster="assets/intro-dolleye.jpg" aria-label="팀 프로젝트 플레이 영상"></video>
+            <span class="work-media-tag">TEAM PROJECT / 2023</span>
+            <div class="work-media-caption"><span>INTERVIEW EVIDENCE</span><strong>Unity 개발 부트캠프</strong></div>
+          </div>
+          <div class="work-story-copy">
+            <span class="work-number">01 / 협업</span>
+            <h3>같은 방향을 보도록<br>팀의 기준을 맞춥니다.</h3>
+            <p>기획 의도를 공유하고 역할 사이의 판단 기준을 정리해, 팀이 한 방향으로 제작하도록 조율했습니다.</p>
+            <dl class="work-evidence"><div><dt>역할</dt><dd>팀장 · 게임 기획</dd></div><div><dt>근거</dt><dd>2023 Unity 개발 부트캠프 팀 인터뷰</dd></div></dl>
+            <a class="work-link is-placeholder" href="#work-media-note" aria-describedby="work-media-note">인터뷰 원본 연결 슬롯 <span>↗</span></a>
+          </div>
+        </article>
+
+        <article class="work-story work-story-reverse">
+          <div class="work-story-media work-placeholder work-placeholder-test" role="img" aria-label="Octoplug 테스트 대시보드 자리 표시자">
+            <span class="work-media-tag">OCTOPLUG / PLAYTEST</span>
+            <div class="placeholder-dashboard" aria-hidden="true"><span></span><span></span><span></span><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="work-media-caption"><span>EVIDENCE SLOT</span><strong>테스트 화면 · 대시보드</strong></div>
+          </div>
+          <div class="work-story-copy">
+            <span class="work-number">02 / 검증</span>
+            <h3>플레이 결과를 보고<br>문제를 다시 확인합니다.</h3>
+            <p>감에 머무르지 않고 플레이 흐름과 반응을 확인한 뒤, 문제를 고치고 다시 검증합니다.</p>
+            <dl class="work-evidence"><div><dt>과정</dt><dd>문제 발견 → 수정 → 재검증</dd></div><div><dt>자료</dt><dd>Octoplug 테스트 · 대시보드</dd></div></dl>
+            <span class="work-link is-placeholder">테스트 자료 연결 슬롯 <span>↗</span></span>
+          </div>
+        </article>
+
+        <article class="work-story">
+          <div class="work-story-media work-placeholder work-placeholder-ai" role="img" aria-label="QA 자동화와 Jira 연동 화면 자리 표시자">
+            <span class="work-media-tag">QA AUTOMATION / JIRA</span>
+            <div class="placeholder-flow" aria-hidden="true"><span>TEST</span><i>→</i><span>AI</span><i>→</i><span>JIRA</span></div>
+            <div class="work-media-caption"><span>EVIDENCE SLOT</span><strong>QA 자동화 · Jira 연동</strong></div>
+          </div>
+          <div class="work-story-copy">
+            <span class="work-number">03 / AI 활용</span>
+            <h3>반복은 줄이고<br>판단에 더 집중합니다.</h3>
+            <p>반복 확인과 기록은 자동화하고, 결과를 해석해 다음 결정을 내리는 데 시간을 사용합니다.</p>
+            <dl class="work-evidence"><div><dt>역할</dt><dd>자동화 흐름 설계 · 결과 확인</dd></div><div><dt>자료</dt><dd>QA 자동화 · Jira 연동</dd></div></dl>
+            <span class="work-link is-placeholder">자동화 자료 연결 슬롯 <span>↗</span></span>
+          </div>
+        </article>
+      </div>
+
+      <p class="work-media-note" id="work-media-note">현재 폴더에는 인터뷰 원본이 없어 팀 프로젝트 영상으로 우선 표시했습니다. 원본을 assets에 추가하면 이 슬롯만 교체할 수 있습니다.</p>
+    </section>
+
+    <section class="experience-section" id="experience" aria-labelledby="experienceTitle">
+      <header class="section-heading">
+        <span class="eyebrow">04 / EXPERIENCE</span>
+        <h2 id="experienceTitle">Experience.</h2>
+      </header>
+      <article class="experience-strip">
+        <div class="experience-company">
+          <h3>웅진씽크빅</h3>
+          <p>Unity 클라이언트 개발</p>
+        </div>
+        <time datetime="2023-03/2025-03">2023.03 — 2025.03</time>
+        <div class="experience-detail">
+          <strong>LLM 기반 영어 교육 서비스 개발</strong>
+          <ul>
+            <li>ChatGPT API 기반 자유대화 콘텐츠 개발</li>
+            <li>현장 테스트를 바탕으로 대화 흐름 개선</li>
+            <li>일본·베트남 서비스 현지화 대응</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="core-tools-section" id="core-tools" aria-labelledby="coreToolsTitle">
+      <header class="core-tools-heading">
+        <div><span class="eyebrow">05 / WORKING TOOLKIT</span><h2 id="coreToolsTitle">CORE TOOLS</h2></div>
+        <p>기획부터 구현과 협업까지, 직접 사용하는 도구.</p>
+      </header>
+      <div class="tool-belt">
+        <article class="tool-group tool-group-build" aria-labelledby="toolBuildTitle">
+          <h3 id="toolBuildTitle"><span>01</span> BUILD</h3>
+          <div class="tool-slots">
+            <div class="tool-slot tool-slot-featured"><span class="tool-glyph" aria-hidden="true">◈</span><strong>Unity</strong><small>프로토타입 · 시스템 구현</small></div>
+            <div class="tool-slot tool-slot-featured"><span class="tool-glyph tool-glyph-code" aria-hidden="true">C#</span><strong>C#</strong><small>게임 로직 · 기능 구현</small></div>
+          </div>
+        </article>
+        <article class="tool-group" aria-labelledby="toolDesignTitle">
+          <h3 id="toolDesignTitle"><span>02</span> DESIGN &amp; DATA</h3>
+          <div class="tool-slots">
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">⌘</span><strong>Figma</strong><small>UI 기획 · 화면 설계</small></div>
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">▦</span><strong>Excel</strong><small>데이터 정리 · 밸런싱</small></div>
+          </div>
+        </article>
+        <article class="tool-group" aria-labelledby="toolCollabTitle">
+          <h3 id="toolCollabTitle"><span>03</span> COLLABORATION</h3>
+          <div class="tool-slots">
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">↗</span><strong>Jira</strong><small>작업 관리 · 협업</small></div>
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">▤</span><strong>Confluence</strong><small>문서화 · 협업</small></div>
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">⑂</span><strong>Git &amp; GitHub</strong><small>버전 관리 · 협업</small></div>
+          </div>
+        </article>
+        <article class="tool-group" aria-labelledby="toolAiTitle">
+          <h3 id="toolAiTitle"><span>04</span> AI</h3>
+          <div class="tool-slots">
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">✳</span><strong>ChatGPT</strong><small>기획 보조 · 구현 · QA</small></div>
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">✳</span><strong>Claude</strong><small>기획 보조 · 구현 · QA</small></div>
+            <div class="tool-slot"><span class="tool-glyph" aria-hidden="true">✳</span><strong>Gemini</strong><small>기획 보조 · 구현 · QA</small></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="play-style-section" id="play-style" aria-label="Play style and game development experience">
+      <div class="play-build-grid">
+        <article class="play-build-panel play-panel" aria-labelledby="playStyleTitle">
+          <header class="play-build-heading">
+            <span class="eyebrow">06 / PLAY STYLE</span>
+            <h2 id="playStyleTitle">PLAY STYLE</h2>
+            <p>What I've played</p>
+          </header>
+          <figure class="radar-figure" aria-labelledby="radarTitle radarDescription">
+          <svg class="radar-chart" viewBox="0 0 620 580" role="img">
+            <title id="radarTitle">상위 여섯 개 게임 장르 레이더 차트</title>
+            <desc id="radarDescription">RPG 15, 플랫폼 11, 로그라이크 11, 어드벤처 9, 시뮬레이션 8, 생존 8</desc>
+            <g class="radar-grid" aria-hidden="true">
+              <polygon points="310,250 353.3,275 353.3,325 310,350 266.7,325 266.7,275" />
+              <polygon points="310,200 396.6,250 396.6,350 310,400 223.4,350 223.4,250" />
+              <polygon points="310,150 439.9,225 439.9,375 310,450 180.1,375 180.1,225" />
+              <polygon points="310,100 483.2,200 483.2,400 310,500 136.8,400 136.8,200" />
+              <line x1="310" y1="300" x2="310" y2="100" />
+              <line x1="310" y1="300" x2="483.2" y2="200" />
+              <line x1="310" y1="300" x2="483.2" y2="400" />
+              <line x1="310" y1="300" x2="310" y2="500" />
+              <line x1="310" y1="300" x2="136.8" y2="400" />
+              <line x1="310" y1="300" x2="136.8" y2="200" />
+            </g>
+            <g class="radar-data" aria-hidden="true">
+              <polygon class="radar-area" points="310,100 437,226.7 437,373.3 310,420 217.6,353.3 217.6,246.7" />
+              <polyline class="radar-line" points="310,100 437,226.7 437,373.3 310,420 217.6,353.3 217.6,246.7 310,100" />
+              <g class="radar-points">
+                <circle cx="310" cy="100" r="5" /><circle cx="437" cy="226.7" r="5" />
+                <circle cx="437" cy="373.3" r="5" /><circle cx="310" cy="420" r="5" />
+                <circle cx="217.6" cy="353.3" r="5" /><circle cx="217.6" cy="246.7" r="5" />
+              </g>
+            </g>
+            <g class="radar-labels" aria-hidden="true">
+              <text x="310" y="48" text-anchor="middle"><tspan>RPG</tspan><tspan x="310" dy="22">15</tspan></text>
+              <text x="510" y="178" text-anchor="start"><tspan>플랫폼</tspan><tspan x="510" dy="22">11</tspan></text>
+              <text x="510" y="426" text-anchor="start"><tspan>로그라이크</tspan><tspan x="510" dy="22">11</tspan></text>
+              <text x="310" y="542" text-anchor="middle"><tspan>어드벤처</tspan><tspan x="310" dy="22">9</tspan></text>
+              <text x="110" y="426" text-anchor="end"><tspan>시뮬레이션</tspan><tspan x="110" dy="22">8</tspan></text>
+              <text x="110" y="178" text-anchor="end"><tspan>생존</tspan><tspan x="110" dy="22">8</tspan></text>
+            </g>
+          </svg>
+            <figcaption>TOP 6 MAIN GENRES</figcaption>
+          </figure>
+          <div class="play-detail">
+            <div class="play-style-stats" aria-label="103 games, 18 genres">
+              <div><strong>103</strong><span>GAMES</span></div>
+              <div><strong>18</strong><span>GENRES</span></div>
+            </div>
+            <ul class="play-genre-list" aria-label="장르별 게임 수">
+              <li><span>RPG</span><strong>15</strong></li><li><span>플랫폼</span><strong>11</strong></li>
+              <li><span>로그라이크</span><strong>11</strong></li><li><span>어드벤처</span><strong>9</strong></li>
+              <li><span>시뮬레이션</span><strong>8</strong></li><li><span>생존</span><strong>8</strong></li>
+              <li><span>기타</span><strong>42</strong></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="play-build-panel built-panel" aria-labelledby="builtTitle">
+          <header class="play-build-heading">
+            <span class="eyebrow">GAME DEVELOPMENT</span>
+            <h2 id="builtTitle">WHAT I'VE BUILT</h2>
+            <p>What I've made</p>
+          </header>
+          <div class="built-visual">
+            <div class="built-stats" aria-label="7 projects, 5 solo, 2 team">
+              <div><strong>7</strong><span>PROJECTS</span></div>
+              <div><strong>5</strong><span>SOLO</span></div>
+              <div><strong>2</strong><span>TEAM</span></div>
+            </div>
+            <p class="distribution-label">GENRES I'VE WORKED WITH</p>
+            <ul class="build-genre-list">
+              <li><span>캐주얼</span><i class="genre-dots" aria-label="4 projects"><b></b><b></b><b></b><b></b></i><strong>4</strong></li>
+              <li><span>퍼즐</span><i class="genre-dots" aria-label="2 projects"><b></b><b></b></i><strong>2</strong></li>
+              <li><span>런</span><i class="genre-dots" aria-label="2 projects"><b></b><b></b></i><strong>2</strong></li>
+              <li><span>로그라이트</span><i class="genre-dots" aria-label="1 project"><b></b></i><strong>1</strong></li>
+              <li><span>멀티플레이</span><i class="genre-dots" aria-label="1 project"><b></b></i><strong>1</strong></li>
+              <li><span>핀볼</span><i class="genre-dots" aria-label="1 project"><b></b></i><strong>1</strong></li>
+            </ul>
+          </div>
+          <div class="built-detail">
+            <div class="tool-experience"><span>TOOLS</span><p>Unity <b>5</b><i></i>Godot <b>1</b><i></i>Web <b>1</b></p></div>
+            <div class="release-experience"><span>DISTRIBUTION</span><p>정식 출시 <b>1</b><i></i>웹 빌드 <b>2</b><i></i>그 외 미배포 또는 진행중</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="aboutTitle">
+      <header class="about-heading">
+        <div><span class="eyebrow">06 / ABOUT ME</span><h2 id="aboutTitle">ABOUT ME</h2></div>
+        <p>조금 더 알고 싶다면</p>
+      </header>
+      <div class="about-qa">
+        <article class="about-question">
+          <span class="qa-mark" aria-hidden="true">Q</span>
+          <div><h3>왜 게임 기획자가 되고 싶나요?</h3><p><span class="qa-answer-mark">A</span>내용 작성 예정</p></div>
+          <span class="qa-index" aria-hidden="true">01</span>
+        </article>
+        <article class="about-question">
+          <span class="qa-mark" aria-hidden="true">Q</span>
+          <div><h3>개발 경험이 게임 기획에 어떤 도움이 되나요?</h3><p><span class="qa-answer-mark">A</span>내용 작성 예정</p></div>
+          <span class="qa-index" aria-hidden="true">02</span>
+        </article>
+        <article class="about-question">
+          <span class="qa-mark" aria-hidden="true">Q</span>
+          <div><h3>어떤 방식으로 게임을 개선하나요?</h3><p><span class="qa-answer-mark">A</span>내용 작성 예정</p></div>
+          <span class="qa-index" aria-hidden="true">03</span>
+        </article>
+      </div>
+    </section>
+
+    <footer class="contact-section" id="contact" aria-labelledby="contactTitle">
+      <div class="contact-main">
+        <div class="contact-identity"><span class="eyebrow">07 / CONTACT</span><h2 id="contactTitle">CONNECT<span>.</span></h2><p class="contact-signoff">좋은 게임을 함께 만들고 싶습니다.</p></div>
+        <div class="contact-details">
+          <p class="contact-name">모호성 <span>GAME DESIGNER</span></p>
+          <dl class="contact-info">
+            <div><dt>EMAIL</dt><dd class="contact-email">이메일 입력 예정</dd></div>
+            <div><dt>PHONE</dt><dd class="contact-phone">전화번호 입력 예정</dd></div>
+            <div><dt>GITHUB</dt><dd class="contact-github">GitHub 주소 입력 예정</dd></div>
+          </dl>
+          <nav class="contact-links" aria-label="연락 및 자료 링크"><a class="contact-placeholder" aria-disabled="true" aria-label="이메일 주소 입력 예정">EMAIL <span>↗</span></a><a class="contact-placeholder" aria-disabled="true" aria-label="GitHub 주소 입력 예정">GITHUB <span>↗</span></a><a class="contact-placeholder" aria-disabled="true" aria-label="PDF 이력서 연결 예정">PDF RESUME <span>↗</span></a></nav>
+        </div>
+      </div>
+      <div class="contact-bottom"><span>모호성 · MO HO SEONG</span><a href="#top">BACK TO TOP ↑</a></div>
+    </footer>
+  </main>
+</body>
+</html>
