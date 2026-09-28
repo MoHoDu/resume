@@ -7,6 +7,7 @@
   const closeButton = media.querySelector('.work-youtube-close');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const videoUrl = 'https://www.youtube.com/embed/1XGQy6NHdd8?start=142&end=162&autoplay=1&mute=1&controls=1&playsinline=1&rel=0';
+  let endTimer;
 
   const start = () => {
     if (!frame.hidden) return;
@@ -14,9 +15,11 @@
     frame.hidden = false;
     closeButton.hidden = false;
     media.classList.add('is-playing');
+    endTimer = window.setTimeout(stop, 20000);
   };
 
   const stop = () => {
+    window.clearTimeout(endTimer);
     if (frame.hidden) return;
     frame.hidden = true;
     frame.removeAttribute('src');
