@@ -246,6 +246,16 @@
 .project-period{margin:10px 0 0;color:#aeb4a7;font:11px "DM Mono",monospace;letter-spacing:.04em}
 .project-period[hidden]{display:none}
 
+/* Interview preview: keep YouTube unloaded until someone chooses to play. */
+.work-youtube-media .work-youtube-poster{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;transform:scale(1.13);filter:saturate(.85) brightness(.72)}
+.work-youtube-media .work-youtube-frame{position:absolute;z-index:2;inset:0;width:100%;height:100%;border:0}
+.work-youtube-media .work-youtube-play{position:absolute;z-index:4;top:50%;left:50%;display:grid;place-items:center;width:66px;height:66px;padding:0 0 0 4px;border:1px solid rgba(199,255,94,.7);border-radius:50%;background:rgba(9,11,16,.78);color:var(--lime);font-size:24px;transform:translate(-50%,-50%);cursor:pointer}
+.work-youtube-media .work-youtube-play:hover,.work-youtube-media .work-youtube-play:focus-visible,.work-youtube-media .work-youtube-close:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.work-youtube-media .work-youtube-close{position:absolute;z-index:5;top:16px;right:16px;width:34px;height:34px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(9,11,16,.86);color:#fff;cursor:pointer}
+.work-youtube-media.is-playing .work-youtube-poster,.work-youtube-media.is-playing .work-youtube-play,.work-youtube-media.is-playing .work-media-tag,.work-youtube-media.is-playing .work-media-caption{visibility:hidden}
+.work-youtube-media [hidden]{display:none!important}
+@media print{.work-youtube-media .work-youtube-play,.work-youtube-media .work-youtube-close,.work-youtube-media .work-youtube-frame{display:none!important}.work-youtube-media .work-youtube-poster{filter:none;transform:none}}
+
 /* Resume section rhythm and media framing. */
 @media screen{
   .section-heading{display:block}

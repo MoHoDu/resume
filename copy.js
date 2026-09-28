@@ -76,7 +76,7 @@
   direct('.featured-label', 'projects', 'selectedLabel');
   direct('.view-project-link', 'projects', 'detailLabel');
 
-  pairs('work', [['.work-intro .eyebrow', 'eyebrow'], ['.work-intro p', 'introduction'], ['.work-media-note', 'mediaNote']]);
+  pairs('work', [['.work-intro .eyebrow', 'eyebrow'], ['.work-intro p', 'introduction']]);
   set('#workTitle', 'work', 'heading');
   const workCases = [
     ['.work-story-collaborate', 'collaboration', ['Role', 'Evidence']],

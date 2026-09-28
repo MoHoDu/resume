@@ -20,6 +20,7 @@
   <script src="app.js" defer></script>
   <script src="projects.js" defer></script>
   <script src="play-style.js" defer></script>
+  <script src="work-interview.js" defer></script>
 </head>
 <body>
   <main id="top">
@@ -108,8 +109,11 @@
 
       <div class="work-view work-view-b" id="workViewB">
         <article class="work-story work-story-collaborate">
-          <div class="work-story-media work-video-media">
-            <video muted loop playsinline preload="metadata" src="assets/dolleye-web.mp4" poster="assets/intro-dolleye.jpg" aria-label="팀 프로젝트 플레이 영상"></video>
+          <div class="work-story-media work-video-media work-youtube-media">
+            <img class="work-youtube-poster" src="assets/work-interview-155.png" alt="2023 Unity 개발 부트캠프 인터뷰 2분 35초 장면" loading="lazy" decoding="async">
+            <button class="work-youtube-play" type="button" aria-label="인터뷰 영상 2분 22초부터 2분 42초까지 재생. 재생 후 영상에서 소리를 켤 수 있습니다.">▶</button>
+            <iframe class="work-youtube-frame" title="Unity 개발 부트캠프 인터뷰 2분 22초부터 2분 42초" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+            <button class="work-youtube-close" type="button" aria-label="인터뷰 영상 멈추고 정지 장면 보기" hidden>✕</button>
             <span class="work-media-tag">TEAM PROJECT / 2023</span>
             <div class="work-media-caption"><span>INTERVIEW EVIDENCE</span><strong>Unity 개발 부트캠프</strong></div>
           </div>
@@ -118,7 +122,7 @@
             <h3>같은 방향을 보도록<br>팀의 기준을 맞춥니다.</h3>
             <p>기획 의도를 공유하고 역할 사이의 판단 기준을 정리해, 팀이 한 방향으로 제작하도록 조율했습니다.</p>
             <dl class="work-evidence"><div><dt>역할</dt><dd>팀장 · 게임 기획</dd></div><div><dt>근거</dt><dd>2023 Unity 개발 부트캠프 팀 인터뷰</dd></div></dl>
-            <a class="work-link is-placeholder" href="#work-media-note" aria-describedby="work-media-note">인터뷰 원본 연결 슬롯 <span>↗</span></a>
+            <a class="work-link is-placeholder" href="#how-i-work">인터뷰 전체 영상 보기 <span>↗</span></a>
           </div>
         </article>
 
@@ -153,7 +157,6 @@
         </article>
       </div>
 
-      <p class="work-media-note" id="work-media-note">현재 폴더에는 인터뷰 원본이 없어 팀 프로젝트 영상으로 우선 표시했습니다. 원본을 assets에 추가하면 이 슬롯만 교체할 수 있습니다.</p>
     </section>
 
     <section class="experience-section" id="experience" aria-labelledby="experienceTitle">

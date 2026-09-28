@@ -15,8 +15,8 @@ collaborationRoleLabel = 역할
 collaborationRole = 팀장 · 게임 기획
 collaborationEvidenceLabel = 근거
 collaborationEvidence = 2023 Unity 개발 부트캠프 팀 인터뷰
-collaborationLinkLabel = 인터뷰 원본 연결 슬롯
-collaborationUrl =
+collaborationLinkLabel = 인터뷰 전체 영상 보기
+collaborationUrl = https://www.youtube.com/watch?v=1XGQy6NHdd8&t=142s
 
 testingTag = OCTOPLUG / PLAYTEST
 testingMediaLabel = EVIDENCE SLOT
@@ -44,5 +44,4 @@ aiEvidence = QA 자동화 · Jira 연동
 aiLinkLabel = 자동화 자료 연결 슬롯
 aiUrl =
 
-mediaNote = 현재 폴더에는 인터뷰 원본이 없어 팀 프로젝트 영상으로 우선 표시했습니다. 원본을 assets에 추가하면 이 슬롯만 교체할 수 있습니다.
 `;
