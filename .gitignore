@@ -1,5 +1,6 @@
 # Local browser inspection output
 .playwright-cli/
+tmp/pdfs/
 
 # Original videos stay on this computer; the smaller *-web.mp4 files are published.
 assets/source-*.mp4

@@ -289,3 +289,17 @@
   .about-section{padding:52px 0 48px}
   .play-build-panel{grid-template-rows:auto auto auto}
 }
+
+/* Keep the HOW I WORK title with its first case in printed copies. */
+@page{size:A4;margin:12mm}
+@media print{
+  .work-comparison{break-before:page;page-break-before:always}
+  .work-story,.work-story-reverse{display:block;min-height:0;padding:22px 0}
+  .work-story .work-story-media,.work-story-reverse .work-story-media{width:100%;height:265px;min-height:0!important;aspect-ratio:auto!important}
+  .work-story .work-story-copy,.work-story-reverse .work-story-copy{padding:18px 0 2px}
+  .work-story-copy h3{margin:10px 0 12px}
+  .work-evidence{margin-top:18px}
+  .work-link{margin-top:14px}
+  .about-question,.contact-main{break-inside:avoid;page-break-inside:avoid}
+  .contact-info dd,.contact-name span{color:#333}
+}
