@@ -213,12 +213,14 @@
 .about-question p{display:flex;gap:12px;align-items:baseline;margin:7px 0 0;color:#898e85;font-size:12px;line-height:1.65}
 .qa-index{padding-top:3px;color:#686e66;font:10px "DM Mono",monospace;letter-spacing:.1em}
 .contact-section{padding:28px 0 22px;border-top:1px solid rgba(255,255,255,.3);scroll-margin-top:24px}
-.contact-main{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.contact-main{display:grid;grid-template-columns:minmax(0,1fr) clamp(150px,16vw,210px) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}
 .contact-identity{justify-self:start;text-align:left}
 .contact-identity .eyebrow:empty{display:none}
 .contact-identity h2{margin:0;font-size:clamp(44px,7vw,86px);line-height:.82;letter-spacing:-.085em}
 .contact-identity .eyebrow:not(:empty)+h2{margin-top:18px}
 .contact-identity h2 span{color:var(--lime)}
+.contact-portrait{width:100%;aspect-ratio:424/565;margin:0;padding:5px;border:1px solid rgba(255,255,255,.22);border-radius:8px;background:#181d22;box-shadow:0 14px 36px rgba(0,0,0,.25)}
+.contact-portrait img{display:block;width:100%;height:100%;object-fit:cover;border-radius:4px}
 .contact-details{width:min(100%,480px);justify-self:center;padding-bottom:4px}
 .contact-name{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin:0 0 18px;font-size:19px;font-weight:700;letter-spacing:-.04em}
 .contact-name span{color:#92978e;font:10px "DM Mono",monospace;letter-spacing:.12em}
@@ -236,7 +238,7 @@
 .contact-signoff{margin:22px 0 0;color:#c6cac1;font-size:13px;letter-spacing:-.02em}
 .contact-bottom{display:flex;justify-content:space-between;gap:16px;margin-top:clamp(28px,4vw,48px);padding-top:12px;border-top:1px solid var(--line);color:#767c73;font:9px "DM Mono",monospace;letter-spacing:.09em}
 .contact-bottom a{color:#aeb2aa}
-@media(max-width:680px){.about-section,.contact-section{width:calc(100% - 24px)}.about-section{padding:60px 0 72px}.about-heading{align-items:start;flex-direction:column;gap:9px;margin-bottom:18px}.about-heading h2{font-size:38px}.about-heading>p{font-size:12px}.about-question{grid-template-columns:22px minmax(0,1fr);gap:10px;padding:18px 0}.qa-index{display:none}.about-question h3{font-size:15px}.about-question p{font-size:12px}.contact-section{padding:24px 0 18px}.contact-main{grid-template-columns:minmax(0,1fr);gap:28px}.contact-identity{justify-self:stretch;text-align:left}.contact-details{width:100%;justify-self:stretch}.contact-identity h2{font-size:clamp(54px,15vw,78px)}.contact-name{font-size:18px}.contact-signoff{margin:20px 0 0;font-size:12px}}
+@media(max-width:680px){.about-section,.contact-section{width:calc(100% - 24px)}.about-section{padding:60px 0 72px}.about-heading{align-items:start;flex-direction:column;gap:9px;margin-bottom:18px}.about-heading h2{font-size:38px}.about-heading>p{font-size:12px}.about-question{grid-template-columns:22px minmax(0,1fr);gap:10px;padding:18px 0}.qa-index{display:none}.about-question h3{font-size:15px}.about-question p{font-size:12px}.contact-section{padding:24px 0 18px}.contact-main{grid-template-columns:minmax(0,1fr);gap:28px}.contact-identity{justify-self:stretch;text-align:left}.contact-portrait{width:160px}.contact-details{width:100%;justify-self:stretch}.contact-identity h2{font-size:clamp(54px,15vw,78px)}.contact-name{font-size:18px}.contact-signoff{margin:20px 0 0;font-size:12px}}
 @media(max-width:360px){.about-section,.contact-section{width:calc(100% - 20px)}.about-question{gap:8px}.about-question h3{font-size:14px;overflow-wrap:anywhere}.about-question p{font-size:11px}.contact-identity h2{font-size:52px}.contact-links{gap:6px}.contact-links a{min-height:36px;padding:0 9px;font-size:8px;gap:9px}.contact-bottom{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.contact-links a{transition:none}}
 @media print{.about-section,.contact-section{width:100%;color:#111}.about-section{padding:30px 0 34px;break-inside:avoid;page-break-inside:avoid}.about-heading h2,.contact-identity h2{font-size:34px}.about-heading>p,.about-question p,.contact-name span,.contact-signoff{color:#333}.about-question{padding:12px 0;border-color:#aaa}.about-question h3,.contact-name{color:#111}.contact-section{padding:20px 0 0;border-color:#aaa}.contact-links a{color:#111;border-color:#888}.contact-signoff{margin:20px 0 0}.contact-bottom{color:#444;border-color:#aaa}}
