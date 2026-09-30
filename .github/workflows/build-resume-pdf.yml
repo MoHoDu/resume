@@ -24,6 +24,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y fonts-noto-cjk poppler-utils
+      - name: Install PDF browser controller
+        run: npm install --prefix tmp/tools/playwright --no-save playwright-core@1.62.1
       - name: Build the current resume as PDF
         env:
           PDF_CHROME: ${{ steps.chrome.outputs.chrome-path }}

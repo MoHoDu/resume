@@ -120,7 +120,13 @@
       page(8, 'pdf-contact-page', [clone('#contact')]);
 
       await document.fonts.ready;
-      await Promise.all([...documentRoot.querySelectorAll('img')].map(image => image.decode().catch(() => {})));
+      await Promise.all([...documentRoot.querySelectorAll('img')].map(image => {
+        image.loading = 'eager';
+        return Promise.race([
+          image.decode().catch(() => {}),
+          new Promise(resolve => setTimeout(resolve, 6000))
+        ]);
+      }));
       document.documentElement.classList.add('pdf-ready');
       window.pdfReady = true;
     } catch (error) {

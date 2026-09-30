@@ -4,7 +4,7 @@
     {copyId:'octoplug', title:window.resumeText('intro','octoplugTitle'), category:window.resumeText('intro','octoplugCategory'), descriptor:window.resumeText('intro','octoplugDescription'), src:'assets/intro-octoplug.jpg', frameAt:108},
     {copyId:'dolleye', title:window.resumeText('intro','dolleyeTitle'), category:window.resumeText('intro','dolleyeCategory'), descriptor:window.resumeText('intro','dolleyeDescription'), src:'assets/intro-dolleye.jpg', frameAt:215},
     {copyId:'kimbaps', title:window.resumeText('intro','kimbapsTitle'), category:window.resumeText('intro','kimbapsCategory'), descriptor:window.resumeText('intro','kimbapsDescription'), src:'assets/intro-kimbaps.jpg', frameAt:26},
-    {copyId:'namer', title:window.resumeText('intro','namerTitle'), category:window.resumeText('intro','namerCategory'), descriptor:window.resumeText('intro','namerDescription'), src:'assets/intro-namer.jpg', frameAt:0}
+    {copyId:'namer', title:window.resumeText('intro','namerTitle'), category:window.resumeText('intro','namerCategory'), descriptor:window.resumeText('intro','namerDescription'), src:'assets/intro-namer.jpg', frameAt:479}
   ];
   const frame=document.getElementById('gameFrame');
   const title=document.getElementById('projectTitle'), category=document.getElementById('projectCategory'), descriptor=document.getElementById('projectDescriptor'), number=document.getElementById('projectNumber'), fill=document.getElementById('progressFill');

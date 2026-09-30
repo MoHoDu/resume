@@ -1,14 +1,13 @@
 import {createServer} from 'node:http';
 import {createReadStream, existsSync} from 'node:fs';
 import {access, copyFile, mkdir, readFile, stat} from 'node:fs/promises';
-import {spawn, spawnSync} from 'node:child_process';
+import {spawnSync} from 'node:child_process';
 import {resolve, dirname, extname, sep} from 'node:path';
-import {fileURLToPath} from 'node:url';
+import {fileURLToPath, pathToFileURL} from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = resolve(root, 'output/pdf/mo-ho-seong-resume.pdf');
 const temporary = resolve(root, `tmp/pdfs/resume-build-${process.pid}.pdf`);
-const profile = resolve(root, `tmp/pdfs/chrome-build-${process.pid}`);
 const mime = {
   '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8',
   '.css':'text/css; charset=utf-8', '.mp4':'video/mp4', '.jpg':'image/jpeg',
@@ -23,6 +22,9 @@ const browserCandidates = [
 ].filter(Boolean);
 const chrome = browserCandidates.find(candidate => existsSync(candidate) || spawnSync(candidate, ['--version'], {stdio:'ignore'}).status === 0);
 if (!chrome) throw new Error('Chrome을 찾지 못했습니다. PDF_CHROME에 Chrome 실행 파일 경로를 지정하세요.');
+const playwrightModule = process.env.PDF_PLAYWRIGHT_MODULE || resolve(root, 'tmp/tools/playwright/node_modules/playwright-core/index.mjs');
+if (!existsSync(playwrightModule)) throw new Error('Playwright를 찾지 못했습니다. PDF_PLAYWRIGHT_MODULE을 지정하세요.');
+const {chromium} = await import(pathToFileURL(playwrightModule).href);
 
 await mkdir(dirname(output), {recursive:true});
 await mkdir(dirname(temporary), {recursive:true});
@@ -51,17 +53,20 @@ const server = createServer(async (request, response) => {
 await new Promise(resolveListen => server.listen(0, '127.0.0.1', resolveListen));
 const port = server.address().port;
 try {
-  const args = [
-    '--headless', '--disable-gpu', '--no-sandbox', '--no-pdf-header-footer',
-    '--virtual-time-budget=30000', `--user-data-dir=${profile}`,
-    `--print-to-pdf=${temporary}`, `http://127.0.0.1:${port}/?pdf-export=1`
-  ];
-  const exitCode = await new Promise((resolveExit, reject) => {
-    const child = spawn(chrome, args, {stdio:'ignore'});
-    child.on('error', reject);
-    child.on('exit', code => resolveExit(code));
-  });
-  if (exitCode !== 0) throw new Error(`Chrome PDF 출력 실패: ${exitCode}`);
+  const browser = await chromium.launch({headless:true, executablePath:chrome, args:['--no-sandbox']});
+  const watchdog = setTimeout(() => browser.close().catch(() => {}), 90000);
+  try {
+    const page = await browser.newPage({viewport:{width:1360,height:900},reducedMotion:'reduce'});
+    await page.goto(`http://127.0.0.1:${port}/?pdf-export=1`, {waitUntil:'domcontentloaded',timeout:30000});
+    await page.waitForFunction(() => window.pdfReady || window.pdfError, null, {timeout:60000});
+    const error = await page.evaluate(() => window.pdfError);
+    if (error) throw new Error(`PDF 화면 준비 실패: ${error}`);
+    await page.emulateMedia({media:'print'});
+    await page.pdf({path:temporary,printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
+  } finally {
+    clearTimeout(watchdog);
+    await browser.close().catch(() => {});
+  }
   await access(temporary);
   const info = await stat(temporary);
   if (info.size < 100_000) throw new Error('PDF 파일이 비어 있거나 너무 작습니다.');

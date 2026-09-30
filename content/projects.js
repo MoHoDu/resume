@@ -4,7 +4,7 @@ window.resumeCopyRaw.projects = `
 # 구역 제목과 안내
 eyebrow =
 heading = Projects.
-introduction = 카드를 누르면 선택한 프로젝트가 대표 영역으로 올라옵니다. 핵심 정보와 링크는 마우스를 올리지 않아도 바로 확인할 수 있습니다.
+introduction =
 guide = 항목을 누르면 상세 내용을 볼 수 있습니다.
 selectedLabel = SELECTED /
 genreLabel = 장르

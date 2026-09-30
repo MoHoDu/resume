@@ -1,9 +1,11 @@
 # Local browser inspection output
 .playwright-cli/
 tmp/pdfs/
+tmp/tools/
 
 # Original videos stay on this computer; the smaller *-web.mp4 files are published.
 assets/source-*.mp4
+assets/Namer_play.mp4
 
 # Operating system and editor files
 .DS_Store
