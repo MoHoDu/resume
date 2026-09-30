@@ -1,0 +1,48 @@
+name: Update resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'output/pdf/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  update-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: browser-actions/setup-chrome@v2
+        id: chrome
+      - name: Install Korean fonts and PDF checker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk poppler-utils
+      - name: Build the current resume as PDF
+        env:
+          PDF_CHROME: ${{ steps.chrome.outputs.chrome-path }}
+        run: node scripts/build-pdf.mjs
+      - name: Save PDF on main
+        id: save
+        run: |
+          if git diff --quiet -- output/pdf/mo-ho-seong-resume.pdf; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add output/pdf/mo-ho-seong-resume.pdf
+          git commit -m 'chore: refresh resume PDF'
+          git push
+          echo 'changed=true' >> "$GITHUB_OUTPUT"
+      - name: Refresh GitHub Pages after the PDF update
+        if: steps.save.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"

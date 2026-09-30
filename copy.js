@@ -247,7 +247,7 @@
   for (const [selector, href] of contactLinks) {
     if (href) {
       const link = root.querySelector(selector);
-      link.href = href;
+      link.href = selector.includes('nth-child(3)') ? `${href}?v=${Date.now()}` : href;
       link.classList.remove('contact-placeholder');
       link.removeAttribute('aria-disabled');
       link.removeAttribute('aria-label');

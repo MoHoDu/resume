@@ -1,0 +1,108 @@
+@page{size:360mm 330mm;margin:0}
+@media print{
+  :root{color-scheme:dark;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  html,body{width:360mm!important;margin:0!important;background:#090b10!important;color:var(--ink)!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  #top{display:none!important}
+  #pdfDocument{display:block!important}
+  .pdf-page{box-sizing:border-box;width:360mm;height:330mm;padding:19mm 20mm;background:#090b10;color:var(--ink);overflow:hidden;break-after:page;page-break-after:always;display:flex;flex-direction:column}
+  .pdf-page:last-child{break-after:auto;page-break-after:auto}
+  .pdf-page *{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .pdf-page .eyebrow{color:var(--lime)}
+
+  /* 1: INTRO stays visually identical to the web hero and sits in the middle. */
+  .pdf-intro-page{justify-content:center;align-items:center}
+  .pdf-intro-page .resume-frame{display:block;width:100%;margin:0;padding:9px;border:1px solid rgba(255,255,255,.15);border-radius:15px;background:#171a20;box-shadow:none}
+  .pdf-intro-page .scene{height:780px;min-height:780px;max-height:none;page-break-after:auto;break-inside:avoid}
+  .pdf-intro-page .hero-footer,.pdf-intro-page .scroll-cue,.pdf-intro-page .carousel-controls{display:none!important}
+  .pdf-intro-page .site-nav{display:flex!important}
+  .pdf-intro-page .hero-copy{display:block!important}
+
+  /* 2-3: two equally sized full project cards, one above the other. */
+  .pdf-projects-page .projects-intro{display:block;width:100%;margin:0 0 26px;color:var(--ink)}
+  .pdf-projects-page .projects-intro h2{margin:8px 0 10px;font-size:55px;color:var(--ink)}
+  .pdf-projects-page .projects-intro p{max-width:790px;color:var(--muted)}
+  .pdf-project-list{display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:22px;height:930px;min-height:0;flex:none}
+  .pdf-project-card{display:grid;grid-template-columns:57% 43%;min-height:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#101319;break-inside:avoid}
+  .pdf-project-media{position:relative;min-height:0;overflow:hidden;background:#171b22}
+  .pdf-project-media img{display:block;width:100%;height:100%;object-fit:cover}
+  .pdf-project-media .featured-label{position:absolute;top:22px;left:22px}
+  .pdf-project-info{display:flex;flex-direction:column;min-height:0;padding:25px 29px;color:var(--ink)}
+  .pdf-project-type,.pdf-project-result span{color:var(--lime);font:10px "DM Mono",monospace;letter-spacing:.08em}
+  .pdf-project-info h3{margin:7px 0 0;font-size:42px;line-height:1.08;letter-spacing:-.055em}
+  .pdf-project-period{margin:9px 0 0;font-size:12px;color:var(--muted)}
+  .pdf-project-summary{margin:15px 0 17px;font-size:16px;line-height:1.48;color:#d7d9d4}
+  .pdf-project-meta{margin:0}
+  .pdf-project-meta>div{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:8px 0;border-top:1px solid var(--line)}
+  .pdf-project-meta dt{font:10px "DM Mono",monospace;color:var(--muted)}
+  .pdf-project-meta dd{margin:0;font-size:13px;color:#d8dad5}
+  .pdf-project-result{margin:12px 0 0;padding-top:11px;border-top:1px solid var(--line)}
+  .pdf-project-result p{margin:6px 0 0;font-size:12px;line-height:1.45;color:#aeb1aa}
+  .pdf-project-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px}
+  .pdf-project-links a{padding:7px 10px;border:1px solid var(--line);border-radius:4px;color:#d9dcd5;font:10px "DM Mono",monospace}
+
+  /* 4: three work examples on one page, with the original media and copy. */
+  .pdf-work-page .work-intro{display:block;width:100%;margin:0 0 27px;color:var(--ink)}
+  .pdf-work-page .work-intro h2{margin:8px 0 10px;font-size:55px;color:var(--ink)}
+  .pdf-work-page .work-intro p{color:var(--muted)}
+  .pdf-work-list{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));gap:18px;height:930px;min-height:0;flex:none}
+  .pdf-work-page .work-story,.pdf-work-page .work-story-reverse{display:grid;grid-template-columns:47% 1fr;grid-template-rows:1fr;align-items:stretch;gap:0;min-height:0;margin:0;padding:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#101319;break-inside:avoid}
+  .pdf-work-page .work-story .work-story-media,.pdf-work-page .work-story-reverse .work-story-media{grid-column:1;grid-row:1;width:100%;height:100%;min-height:0!important;aspect-ratio:auto!important;border:0;border-radius:0}
+  .pdf-work-page .work-story .work-story-copy,.pdf-work-page .work-story-reverse .work-story-copy{grid-column:2;grid-row:1;min-width:0;padding:25px 30px;color:var(--ink)}
+  .pdf-work-page .work-story-copy h3{margin:13px 0 12px;font-size:33px;line-height:1.12;color:var(--ink)}
+  .pdf-work-page .work-story-copy>p{margin:0;font-size:13px;line-height:1.5;color:#b3b6af}
+  .pdf-work-page .work-evidence{margin:17px 0 0}
+  .pdf-work-page .work-evidence>div{padding:7px 0;border-color:var(--line)}
+  .pdf-work-page .work-evidence dd{color:#d8dad5}
+  .pdf-work-page .work-link{margin-top:12px;border-color:var(--line)}
+  .pdf-work-page .work-media-caption{bottom:36px}
+  .pdf-work-page .work-youtube-poster{filter:saturate(.85) brightness(.72);transform:scale(1.13)}
+  .pdf-work-page .work-placeholder{background:#11151c}
+  .pdf-work-page .placeholder-flow span{color:#e8eadf;border-color:rgba(199,255,94,.4)}
+
+  /* 5: experience and tools share a page. */
+  .pdf-experience-page{justify-content:center;gap:80px}
+  .pdf-experience-page .experience-section,.pdf-experience-page .core-tools-section{width:100%;margin:0;padding:0;color:var(--ink);break-inside:avoid}
+  .pdf-experience-page .section-heading h2,.pdf-experience-page .core-tools-heading h2{font-size:54px;color:var(--ink)}
+  .pdf-experience-page .experience-strip{grid-template-columns:28% 20% 1fr;gap:22px;border-color:var(--line)}
+  .pdf-experience-page .experience-company p,.pdf-experience-page .experience-strip time,.pdf-experience-page .experience-detail ul{color:var(--muted)}
+  .pdf-experience-page .tool-belt{grid-template-columns:repeat(4,minmax(0,1fr));background:#101319}
+  .pdf-experience-page .tool-group{padding:20px}
+  .pdf-experience-page .tool-slot,.pdf-experience-page .tool-slot-featured{background:#151a20;border-color:var(--line)}
+  .pdf-experience-page .tool-slot strong{color:var(--ink)}
+  .pdf-experience-page .tool-slot small,.pdf-experience-page .tool-group h3{color:var(--muted)}
+  .pdf-experience-page .tool-glyph,.pdf-experience-page .tool-group h3 span{color:var(--lime);border-color:rgba(199,255,94,.35)}
+
+  /* 6: the two equal panels remain side by side. */
+  .pdf-play-page{justify-content:center}
+  .pdf-play-page .play-style-section{width:100%;margin:0;padding:0;color:var(--ink);break-inside:avoid}
+  .pdf-play-page .play-build-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pdf-play-page .play-build-panel{min-height:0;grid-template-rows:130px minmax(380px,1fr) 220px;background:#101319}
+  .pdf-play-page .play-build-heading h2,.pdf-play-page .built-stats strong,.pdf-play-page .play-style-stats strong{font-size:clamp(30px,4vw,54px);color:var(--ink)}
+  .pdf-play-page .play-build-heading p,.pdf-play-page .play-genre-list li,.pdf-play-page .tool-experience p,.pdf-play-page .release-experience p{color:var(--muted)}
+  .pdf-play-page .radar-figure{padding:24px!important}
+  .pdf-play-page .radar-chart{max-height:none}
+  .pdf-play-page .radar-grid polygon,.pdf-play-page .radar-grid line{stroke:rgba(255,255,255,.18)}
+  .pdf-play-page .radar-area{fill:rgba(199,255,94,.12)}
+  .pdf-play-page .radar-line,.pdf-play-page .radar-points circle{stroke:var(--lime)}
+  .pdf-play-page .radar-labels text{fill:var(--ink)}
+  .pdf-play-page .play-build-panel+.play-build-panel,.pdf-play-page .play-detail,.pdf-play-page .built-detail{border-color:var(--line)}
+
+  /* 7: About Me has its own page for longer future answers. */
+  .pdf-about-page .about-section{width:100%;margin:0;padding:0;color:var(--ink)}
+  .pdf-about-page .about-heading h2{font-size:58px;color:var(--ink)}
+  .pdf-about-page .about-heading>p,.pdf-about-page .about-question p{color:#a8ada4}
+  .pdf-about-page .about-question{padding:36px 3px;border-color:var(--line);break-inside:avoid}
+  .pdf-about-page .about-question h3{font-size:23px;color:#f0f1ec}
+
+  /* 8: Contact is centered vertically. */
+  .pdf-contact-page{justify-content:center}
+  .pdf-contact-page .contact-section{width:100%;margin:0;padding:35px 0 22px;border-color:rgba(255,255,255,.3);color:var(--ink);break-inside:avoid}
+  .pdf-contact-page .contact-identity h2{font-size:60px}
+  .pdf-contact-page .contact-name{color:var(--ink)}
+  .pdf-contact-page .contact-name span{color:#92978e}
+  .pdf-contact-page .contact-info dd{color:#d9dcd5}
+  .pdf-contact-page .contact-signoff{color:#c6cac1}
+  .pdf-contact-page .contact-links a{color:#d9dcd5;border-color:rgba(255,255,255,.2)}
+  .pdf-contact-page .contact-bottom{color:#767c73;border-color:var(--line)}
+  .pdf-contact-page .contact-portrait{border-color:rgba(255,255,255,.22);background:#181d22}
+}
