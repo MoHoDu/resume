@@ -303,3 +303,4 @@
   .about-question,.contact-main{break-inside:avoid;page-break-inside:avoid}
   .contact-info dd,.contact-name span{color:#333}
 }
+.pdf-video-frame{display:none!important}
