@@ -117,7 +117,10 @@
       page(5, 'pdf-experience-page', [clone('#experience'), clone('#core-tools')]);
       page(6, 'pdf-play-page', [clone('#play-style')]);
       page(7, 'pdf-about-page', [clone('#about')]);
-      page(8, 'pdf-contact-page', [clone('#contact')]);
+      const contact = clone('#contact');
+      const contactHeading = contact.querySelector('.contact-identity');
+      contact.prepend(contactHeading);
+      page(8, 'pdf-contact-page', [contact]);
 
       await document.fonts.ready;
       await Promise.all([...documentRoot.querySelectorAll('img')].map(image => {
@@ -134,5 +137,46 @@
       console.error(error);
     }
   }
+  // Called after print styles are active. Text can change without hand-tuning page heights.
+  window.balanceResumePdf = () => {
+    const innerHeight = element => {
+      const style = getComputedStyle(element);
+      return element.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+    };
+    documentRoot.querySelectorAll('.pdf-projects-page, .pdf-work-page').forEach(sheet => {
+      const header = sheet.firstElementChild;
+      const list = sheet.lastElementChild;
+      const headerStyle = getComputedStyle(header);
+      const room = innerHeight(sheet) - header.getBoundingClientRect().height - parseFloat(headerStyle.marginBottom);
+      list.style.height = `${Math.floor(room)}px`;
+    });
+    const playPage = documentRoot.querySelector('.pdf-play-page');
+    const playSection = playPage.querySelector('.play-style-section');
+    const playGrid = playSection.querySelector('.play-build-grid');
+    playGrid.style.height = `${Math.floor(innerHeight(playPage))}px`;
+
+    const aboutPage = documentRoot.querySelector('.pdf-about-page');
+    const about = aboutPage.querySelector('.about-section');
+    const header = about.querySelector('.about-heading');
+    const questions = [...about.querySelectorAll('.about-question')];
+    const qa = about.querySelector('.about-qa');
+    const headerStyle = getComputedStyle(header);
+    const available = innerHeight(aboutPage) - header.getBoundingClientRect().height - parseFloat(headerStyle.marginBottom);
+    const minimums = questions.map(question => question.scrollHeight);
+    const spare = Math.max(0, available - minimums.reduce((a, b) => a + b, 0));
+    const weights = questions.map(question => Math.max(1, question.textContent.trim().length / 90));
+    const totalWeight = weights.reduce((a, b) => a + b, 0);
+    qa.style.height = `${Math.floor(available)}px`;
+    qa.style.gridTemplateRows = minimums.map((minimum, index) => `${Math.floor(minimum + spare * weights[index] / totalWeight)}px`).join(' ');
+
+    const errors = [];
+    documentRoot.querySelectorAll('.pdf-page').forEach(sheet => {
+      if (sheet.scrollHeight > sheet.clientHeight + 2) errors.push(`page ${sheet.dataset.page} overflows`);
+    });
+    documentRoot.querySelectorAll('.pdf-project-info, .pdf-work-page .work-story-copy, .pdf-play-page .play-build-panel, .pdf-about-page .about-question').forEach(element => {
+      if (element.scrollHeight > element.clientHeight + 3) errors.push(`${element.closest('.pdf-page').dataset.page}: ${element.className} is clipped`);
+    });
+    return errors;
+  };
   build();
 })();

@@ -105,4 +105,67 @@
   .pdf-contact-page .contact-links a{color:#d9dcd5;border-color:rgba(255,255,255,.2)}
   .pdf-contact-page .contact-bottom{color:#767c73;border-color:var(--line)}
   .pdf-contact-page .contact-portrait{border-color:rgba(255,255,255,.22);background:#181d22}
+
+  /* A common top edge for every section title after the cover. The remaining
+     height is assigned by balanceResumePdf after fonts and print CSS load. */
+  .pdf-experience-page,.pdf-play-page,.pdf-contact-page{justify-content:flex-start}
+  .pdf-experience-page{gap:75px}
+  .pdf-experience-page .section-heading{display:block}
+  .pdf-experience-page .section-heading h2{margin-top:8px}
+  .pdf-experience-page .experience-section{min-height:340px}
+  .pdf-experience-page .experience-detail ul{font-size:17px;line-height:1.65}
+  .pdf-experience-page .experience-company p,.pdf-experience-page .experience-strip time{font-size:15px}
+  .pdf-experience-page .experience-detail strong{font-size:19px}
+  .pdf-experience-page .tool-group{padding:25px 18px}
+  .pdf-experience-page .tool-group h3{font-size:13px;white-space:normal}
+  .pdf-experience-page .tool-slot{min-height:84px;padding:14px}
+  .pdf-experience-page .tool-slot strong{font-size:15px}
+  .pdf-experience-page .tool-slot small{font-size:13px}
+
+  .pdf-projects-page .projects-intro,.pdf-work-page .work-intro{margin-bottom:24px}
+  .pdf-projects-page .projects-intro p,.pdf-work-page .work-intro p{font-size:17px;line-height:1.5}
+  .pdf-project-type,.pdf-project-result span{font-size:13px}
+  .pdf-project-period{font-size:15px}
+  .pdf-project-summary{font-size:18px;line-height:1.5}
+  .pdf-project-meta dt{font-size:13px}
+  .pdf-project-meta dd{font-size:16px}
+  .pdf-project-result p{font-size:15px;line-height:1.5}
+  .pdf-project-links a{font-size:12px;padding:9px 12px}
+  .pdf-work-page .work-number,.pdf-work-page .work-evidence dt{font-size:13px}
+  .pdf-work-page .work-story-copy>p{font-size:16px;line-height:1.55}
+  .pdf-work-page .work-evidence dd{font-size:15px;line-height:1.5}
+  .pdf-work-page .work-link{font-size:14px}
+
+  .pdf-play-page .play-build-panel{grid-template-rows:155px minmax(0,1fr) 260px}
+  .pdf-play-page .play-build-heading{padding-top:8px}
+  .pdf-play-page .play-build-heading h2{margin-top:8px}
+  .pdf-play-page .play-build-heading p,.pdf-play-page .play-genre-list li,
+  .pdf-play-page .build-genre-list li,.pdf-play-page .tool-experience p,
+  .pdf-play-page .release-experience p{font-size:15px}
+  .pdf-play-page .play-style-stats span,.pdf-play-page .built-stats span,
+  .pdf-play-page .distribution-label,.pdf-play-page .tool-experience>span,
+  .pdf-play-page .release-experience>span{font-size:13px}
+  .pdf-play-page .play-genre-list strong,.pdf-play-page .build-genre-list li>strong,
+  .pdf-play-page .tool-experience b,.pdf-play-page .release-experience b{font-size:14px}
+
+  .pdf-about-page .about-heading>p{font-size:17px}
+  .pdf-about-page .about-qa{display:grid;grid-template-rows:repeat(3,1fr)}
+  .pdf-about-page .about-question{align-items:center;padding:28px 6px}
+  .pdf-about-page .about-question h3{font-size:28px}
+  .pdf-about-page .about-question p{font-size:19px;line-height:1.65}
+  .pdf-about-page .qa-mark,.pdf-about-page .qa-answer-mark,.pdf-about-page .qa-index{font-size:16px}
+
+  .pdf-contact-page .contact-section{display:flex;flex-direction:column;height:100%;padding:0;border-top:0}
+  .pdf-contact-page .contact-identity{width:100%;padding-bottom:24px;border-bottom:1px solid var(--line)}
+  .pdf-contact-page .contact-identity h2{font-size:60px}
+  .pdf-contact-page .contact-signoff{font-size:18px}
+  .pdf-contact-page .contact-main{grid-template-columns:260px minmax(0,1fr);gap:80px;align-items:center;align-self:center;margin:auto 0;width:min(100%,940px)}
+  .pdf-contact-page .contact-portrait{width:260px}
+  .pdf-contact-page .contact-details{width:100%;justify-self:stretch}
+  .pdf-contact-page .contact-name{font-size:25px}
+  .pdf-contact-page .contact-name span,.pdf-contact-page .contact-info dt,.pdf-contact-page .contact-links a{font-size:14px}
+  .pdf-contact-page .contact-info dd{font-size:18px}
+  .pdf-contact-page .contact-info>div{padding:19px 0;grid-template-columns:95px 1fr}
+  .pdf-contact-page .contact-links a{min-height:48px}
+  .pdf-contact-page .contact-bottom{margin-top:0;font-size:12px}
 }

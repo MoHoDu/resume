@@ -305,3 +305,33 @@
 }
 .pdf-video-frame{display:none!important}
 #pdfDocument{display:none}
+/* Readable copy and labels at both desktop and phone widths. */
+@media screen{
+  .eyebrow,.work-number,.work-evidence dt,.tool-group h3,.tool-group h3 span,
+  .distribution-label,.tool-experience>span,.release-experience>span,
+  .contact-info dt,.contact-links a,.play-style-stats span,.built-stats span{font-size:clamp(11px,1vw,12px)}
+  .experience-company p,.experience-detail ul,.work-evidence dd,
+  .tool-slot small,.play-genre-list li,.play-genre-list strong,
+  .build-genre-list li,.tool-experience p,.release-experience p,
+  .about-question p,.contact-info dd{font-size:clamp(13px,1.1vw,15px)}
+  .tool-slot strong{font-size:clamp(13px,1.1vw,15px)}
+  .tool-slot{min-height:54px;padding:8px 9px}
+  .project-title-line>span,.project-meta dt,.project-more span,
+  .compact-type,.compact-select,.project-actions a,.featured-label,
+  .media-index,.work-media-caption span{font-size:clamp(11px,1vw,12px)}
+  .project-one-line,.project-meta dd,.project-more p,
+  .compact-summary,.work-story-copy>p{font-size:clamp(14px,1.2vw,16px)}
+  .project-actions a{padding:10px 13px}
+  .about-question h3{font-size:clamp(17px,1.6vw,20px)}
+  .contact-name span{font-size:12px}
+}
+@media screen and (max-width:360px){
+  .tool-slot{grid-template-columns:20px minmax(0,1fr);padding:7px 5px}
+  .tool-slot strong{font-size:12px}
+  .tool-slot small{font-size:11px}
+  .contact-links a{font-size:10px;padding:0 8px}
+}
+@media screen and (min-width:761px) and (max-width:900px){
+  .experience-strip{grid-template-columns:1fr 1fr;gap:20px}
+  .experience-detail{grid-column:1/-1}
+}

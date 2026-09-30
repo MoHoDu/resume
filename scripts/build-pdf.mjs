@@ -62,6 +62,8 @@ try {
     const error = await page.evaluate(() => window.pdfError);
     if (error) throw new Error(`PDF 화면 준비 실패: ${error}`);
     await page.emulateMedia({media:'print'});
+    const layoutErrors = await page.evaluate(() => window.balanceResumePdf());
+    if (layoutErrors.length) throw new Error(`PDF 내용이 잘립니다: ${layoutErrors.join(', ')}`);
     await page.pdf({path:temporary,printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
   } finally {
     clearTimeout(watchdog);

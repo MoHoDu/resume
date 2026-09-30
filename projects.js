@@ -4,8 +4,8 @@
     {id:'octoplug',index:'01',kind:'video',src:'assets/octoplug-web.mp4',poster:'assets/intro-octoplug.jpg',start:108},
     {id:'dolleye',index:'02',kind:'video',src:'assets/dolleye-web.mp4',poster:'assets/intro-dolleye.jpg',start:215},
     {id:'kimbaps',index:'03',kind:'video',src:'assets/kimbaps-web.mp4',poster:'assets/intro-kimbaps.jpg',start:26},
-    // 웹 영상의 0초는 원본 영상의 7분 59초입니다.
-    {id:'namer',index:'04',kind:'video',src:'assets/namer-web.mp4',poster:'assets/namer-still.jpg',start:0,sourceStart:479}
+    // 웹 영상의 0초는 원본 영상의 14분 23초입니다. 15분 45초까지 재생합니다.
+    {id:'namer',index:'04',kind:'video',src:'assets/namer-web.mp4',poster:'assets/namer-still.jpg',start:0,sourceStart:863}
   ].map(project => ({
     ...project,
     title:content(project.id,'Title'),type:content(project.id,'Type'),period:content(project.id,'Period'),
