@@ -305,6 +305,12 @@
 }
 .pdf-video-frame{display:none!important}
 #pdfDocument{display:none}
+/* Keep each genre and its count together, like the adjacent tool summary. */
+.play-genre-list{display:flex;flex-wrap:wrap;gap:12px 0}
+.play-genre-list li{justify-content:flex-start;align-items:baseline;gap:7px;margin-right:12px;padding-right:12px;border-right:1px solid var(--line);white-space:nowrap}
+.play-genre-list li:last-child{margin-right:0;padding-right:0;border-right:0}
+.play-genre-list li span{overflow:visible;text-overflow:clip}
+.play-genre-list strong{color:var(--lime)}
 /* Evidence images keep their full frame; links open a readable full-size copy. */
 .work-dashboard-media{background:#101319}
 .work-dashboard-media::after{display:none}
