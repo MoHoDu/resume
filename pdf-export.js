@@ -166,7 +166,9 @@
     const qa = about.querySelector('.about-qa');
     const headerStyle = getComputedStyle(header);
     const available = innerHeight(aboutPage) - header.getBoundingClientRect().height - parseFloat(headerStyle.marginBottom);
-    const minimums = questions.map(question => question.scrollHeight);
+    qa.style.height = 'auto';
+    qa.style.gridTemplateRows = 'auto';
+    const minimums = questions.map(question => question.getBoundingClientRect().height);
     const spare = Math.max(0, available - minimums.reduce((a, b) => a + b, 0));
     const weights = questions.map(question => Math.max(1, question.textContent.trim().length / 90));
     const totalWeight = weights.reduce((a, b) => a + b, 0);

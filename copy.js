@@ -80,7 +80,7 @@
   set('#workTitle', 'work', 'heading');
   const workCases = [
     ['.work-story-collaborate', 'collaboration', ['Role', 'Evidence']],
-    ['.work-story-reverse', 'testing', ['Process', 'Evidence']],
+    ['.work-story-reverse', 'testing', ['Process', 'Evidence', 'Method']],
     ['.work-story-ai', 'ai', ['Role', 'Evidence']]
   ];
   for (const [base, prefix, labels] of workCases) {
@@ -92,10 +92,10 @@
       [`${base} .work-media-caption strong`, `${prefix}MediaTitle`],
       [`${base} .work-number`, `${prefix}Number`],
       [`${base} .work-story-copy > p`, `${prefix}Description`],
-      [`${base} .work-evidence > div:nth-child(1) dt`, `${prefix}${labels[0]}Label`],
-      [`${base} .work-evidence > div:nth-child(1) dd`, `${prefix}${labels[0]}`],
-      [`${base} .work-evidence > div:nth-child(2) dt`, `${prefix}${labels[1]}Label`],
-      [`${base} .work-evidence > div:nth-child(2) dd`, `${prefix}${labels[1]}`]
+      ...labels.flatMap((label, index) => [
+        [`${base} .work-evidence > div:nth-child(${index + 1}) dt`, `${prefix}${label}Label`],
+        [`${base} .work-evidence > div:nth-child(${index + 1}) dd`, `${prefix}${label}`]
+      ])
     ]);
     set(`${base} .work-story-copy h3`, 'work', `${prefix}Heading`);
     direct(`${base} .work-link`, 'work', `${prefix}LinkLabel`);
@@ -105,7 +105,7 @@
     collaborationLink.href = copy.work.collaborationUrl;
     collaborationLink.classList.remove('is-placeholder');
   }
-  for (const [base, key] of [['.work-story-reverse', 'testingUrl'], ['.work-story-ai', 'aiUrl']]) {
+  for (const [base, key] of [['.work-story-ai', 'aiUrl']]) {
     const placeholder = root.querySelector(`${base} .work-link`);
     if (!placeholder || !copy.work?.[key]) continue;
     const link = root.createElement('a');
@@ -204,9 +204,42 @@
   pairs('about', [
     ['.about-heading .eyebrow', 'eyebrow'], ['#aboutTitle', 'heading'], ['.about-heading > p', 'introduction']
   ]);
+  // [제목]은 소제목, ' · '로 시작하는 줄은 목록, '문제:'처럼 콜론 앞은 항목 이름으로 표시합니다.
+  const answerLine = (className, text) => {
+    const line = root.createElement('span');
+    line.className = className;
+    if (text) line.textContent = text;
+    return line;
+  };
+  const renderAnswer = text => {
+    const body = answerLine('qa-answer-body');
+    for (const raw of text.split('\n')) {
+      const value = raw.trim();
+      if (!value) { body.append(answerLine('qa-answer-gap')); continue; }
+      const heading = /^\[(.+)\]$/.exec(value);
+      if (heading) { body.append(answerLine('qa-answer-case', heading[1])); continue; }
+      if (!value.startsWith('·')) { body.append(answerLine('qa-answer-text', value)); continue; }
+      const item = answerLine('qa-answer-item');
+      const content = value.slice(1).trim();
+      const label = /^([^:]{1,24}):\s*(.+)$/.exec(content);
+      if (label) {
+        if (label[1].length <= 3) item.classList.add('has-short-key');
+        item.append(answerLine('qa-answer-key', label[1]), answerLine('qa-answer-value', label[2]));
+      } else item.append(answerLine('qa-answer-value', content));
+      body.append(item);
+    }
+    return body;
+  };
   for (let index = 1; index <= 3; index++) {
     set(`.about-question:nth-child(${index}) h3`, 'about', `question${index}`);
-    direct(`.about-question:nth-child(${index}) p`, 'about', `answer${index}`);
+    const answer = root.querySelector(`.about-question:nth-child(${index}) p`);
+    const key = `answer${index}`;
+    if (!answer || !(key in (copy.about || {}))) continue;
+    answer.querySelector('.qa-answer-body')?.remove();
+    [...answer.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).forEach(node => node.remove());
+    answer.append(renderAnswer(window.resumeText('about', key)));
+    window.resumeStyle('about', key, answer);
+    answer.style.whiteSpace = '';
   }
 
   pairs('contact', [

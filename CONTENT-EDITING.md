@@ -38,6 +38,12 @@ heading.align = center
 
 HOW I WORK의 사례 제목은 `collaborationHeading`, `testingHeading`, `aiHeading` 한 줄씩 작성합니다. 예를 들어 `collaborationHeading = 같은 방향을 보도록|팀의 기준을 맞춥니다.`처럼 `|`를 넣으면 원하는 위치에서 줄이 바뀝니다. CONTACT 제목도 `heading = LET'S|CONNECT.`처럼 작성할 수 있습니다. 끝에 `.`을 쓰면 기존처럼 점에 강조색이 적용되고, 빼면 점도 사라집니다. INTRO 소개 문구는 `description` 한 줄에 작성합니다. 줄바꿈이 필요 없으면 `|`를 넣지 마세요.
 
+ABOUT ME 답변(`answer1`~`answer3`)은 줄마다 모양이 정해집니다. `[링고시티 자유대화]`처럼 대괄호로 감싼 줄은 소제목, ` · `로 시작하는 줄은 목록입니다. 목록에서 `문제: 내용`처럼 콜론을 쓰면 콜론 앞이 항목 이름으로 굵게 표시됩니다. 이름이 세 글자 이하이면 내용과 나란히, 더 길면 이름 아래 줄에 내용이 놓입니다. `||`를 넣으면 한 줄을 띄웁니다.
+
+```text
+answer2 = 요약 문장||[사례 이름]| · 문제: 내용| · 해결: 내용
+```
+
 CONTACT 오른쪽에는 `emailAddress`, `phoneNumber`, `githubUrl`에 적은 값이 그대로 표시됩니다. 예를 들어 `phoneNumber = 010-1234-5678`처럼 입력하세요. 이메일·GitHub·PDF 버튼도 아래에 남습니다. `emailAddress`와 `githubUrl`을 입력하면 해당 버튼에 주소가 연결되고, `pdfUrl`을 입력하면 PDF 버튼이 연결됩니다. 값이 비어 있으면 화면에는 입력 예정 안내가 표시됩니다.
 
 파일 맨 위와 맨 아래의 JavaScript 문장, `=` 왼쪽 이름, 영상 파일 이름과 재생 시작 시간은 그대로 두세요. 저장한 다음 브라우저를 새로고침하면 바뀐 문구가 보입니다. 주소가 없는 링크의 `Url` 또는 `emailAddress`는 비워 두세요.

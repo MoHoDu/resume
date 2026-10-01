@@ -211,6 +211,17 @@
 .qa-mark{padding-top:3px}
 .about-question h3{margin:0;color:#f0f1ec;font-size:clamp(15px,1.6vw,19px);font-weight:600;line-height:1.5;letter-spacing:-.035em}
 .about-question p{display:flex;gap:12px;align-items:baseline;margin:7px 0 0;color:#898e85;font-size:12px;line-height:1.65}
+.qa-answer-body{display:block;flex:1;min-width:0;word-break:keep-all}
+.qa-answer-body>span{display:block}
+.qa-answer-gap{height:.75em}
+.qa-answer-case{margin:0 0 4px;color:#e4e6df;font-weight:700;letter-spacing:-.02em}
+.qa-answer-case::before{content:"";display:inline-block;width:3px;height:.9em;margin-right:8px;border-radius:2px;background:var(--lime);vertical-align:-.1em}
+.qa-answer-item{position:relative;padding-left:14px}
+.qa-answer-item::before{content:"";position:absolute;left:2px;top:.72em;width:4px;height:4px;border-radius:50%;background:#6f7569}
+.qa-answer-item.has-short-key{display:grid;grid-template-columns:4em minmax(0,1fr);gap:6px}
+.qa-answer-item+.qa-answer-item{margin-top:2px}.qa-answer-item:not(.has-short-key)+.qa-answer-item{margin-top:7px}
+.qa-answer-key{display:block;color:#c9ccc3;font-weight:600}
+.qa-answer-value{display:block}
 .qa-index{padding-top:3px;color:#686e66;font:10px "DM Mono",monospace;letter-spacing:.1em}
 .contact-section{padding:28px 0 22px;border-top:1px solid rgba(255,255,255,.3);scroll-margin-top:24px}
 .contact-main{display:grid;grid-template-columns:minmax(0,1fr) clamp(150px,16vw,210px) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:start}

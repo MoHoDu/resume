@@ -153,9 +153,10 @@
 
   .pdf-about-page .about-heading>p{font-size:17px}
   .pdf-about-page .about-qa{display:grid;grid-template-rows:repeat(3,1fr)}
-  .pdf-about-page .about-question{align-items:center;padding:28px 6px}
-  .pdf-about-page .about-question h3{font-size:28px}
-  .pdf-about-page .about-question p{font-size:19px;line-height:1.65}
+  .pdf-about-page .about-question{align-items:center;padding:18px 6px}
+  .pdf-about-page .about-question h3{font-size:22px}
+  .pdf-about-page .about-question p{font-size:15px;line-height:1.55}
+  .pdf-about-page .qa-answer-case,.pdf-about-page .qa-answer-key{color:#e4e6df}
   .pdf-about-page .qa-mark,.pdf-about-page .qa-answer-mark,.pdf-about-page .qa-index{font-size:16px}
 
   .pdf-contact-page .contact-section{display:flex;flex-direction:column;height:100%;padding:0;border-top:0}

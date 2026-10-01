@@ -58,5 +58,5 @@ releasedLabel = 정식 출시
 releasedCount = 1
 webBuildLabel = 웹 빌드
 webBuildCount = 2
-remainingLabel = 그 외 미배포 또는 진행중
+remainingLabel = 그 외 미배포 또는 진행 중
 `;
