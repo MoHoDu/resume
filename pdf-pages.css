@@ -135,6 +135,8 @@
   .pdf-work-page .work-story-copy>p{font-size:16px;line-height:1.55}
   .pdf-work-page .work-evidence dd{font-size:15px;line-height:1.5}
   .pdf-work-page .work-link{font-size:14px}
+  .pdf-work-page .work-dashboard-gallery{height:100%;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:10px;padding:14px}
+  .pdf-work-page .work-dashboard-gallery img{width:100%;height:auto;object-fit:contain}
 
   .pdf-play-page .play-build-panel{grid-template-rows:155px minmax(0,1fr) 260px}
   .pdf-play-page .play-build-heading{padding-top:8px}

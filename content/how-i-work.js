@@ -5,6 +5,9 @@ eyebrow =
 heading = How I work.
 introduction = 협업의 기준을 맞추고, 플레이로 검증하며, 반복은 자동화합니다.
 
+# true는 표시, false는 숨김입니다. AI 활용 항목을 다시 켜려면 true로 바꾸세요.
+aiEnabled = false
+
 collaborationTag = TEAM PROJECT / 2023
 collaborationMediaLabel = INTERVIEW EVIDENCE
 collaborationMediaTitle = Unity 개발 부트캠프

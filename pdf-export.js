@@ -108,7 +108,9 @@
       const workHeader = clone('.work-intro');
       const workList = document.createElement('div');
       workList.className = 'pdf-work-list';
-      workList.append(...[...document.querySelectorAll('#workViewB > .work-story')].map(story => story.cloneNode(true)));
+      const visibleWork = [...document.querySelectorAll('#workViewB > .work-story')].filter(story => !story.hidden);
+      workList.append(...visibleWork.map(story => story.cloneNode(true)));
+      workList.style.gridTemplateRows = `repeat(${visibleWork.length}, minmax(0, 1fr))`;
       workList.querySelectorAll('button,iframe').forEach(element => element.remove());
       const poster = workList.querySelector('.work-youtube-poster');
       if (poster && settings.interviewPoster) poster.src = settings.interviewPoster;

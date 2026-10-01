@@ -81,9 +81,11 @@
   const workCases = [
     ['.work-story-collaborate', 'collaboration', ['Role', 'Evidence']],
     ['.work-story-reverse', 'testing', ['Process', 'Evidence']],
-    ['.work-view-b > .work-story:nth-child(3)', 'ai', ['Role', 'Evidence']]
+    ['.work-story-ai', 'ai', ['Role', 'Evidence']]
   ];
   for (const [base, prefix, labels] of workCases) {
+    const story = root.querySelector(base);
+    if (story) story.hidden = copy.work?.[`${prefix}Enabled`] === 'false';
     pairs('work', [
       [`${base} .work-media-tag`, `${prefix}Tag`],
       [`${base} .work-media-caption span`, `${prefix}MediaLabel`],
@@ -103,7 +105,7 @@
     collaborationLink.href = copy.work.collaborationUrl;
     collaborationLink.classList.remove('is-placeholder');
   }
-  for (const [base, key] of [['.work-story-reverse', 'testingUrl'], ['.work-view-b > .work-story:nth-child(3)', 'aiUrl']]) {
+  for (const [base, key] of [['.work-story-reverse', 'testingUrl'], ['.work-story-ai', 'aiUrl']]) {
     const placeholder = root.querySelector(`${base} .work-link`);
     if (!placeholder || !copy.work?.[key]) continue;
     const link = root.createElement('a');

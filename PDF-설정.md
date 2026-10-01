@@ -7,7 +7,7 @@ PDF는 현재 웹 이력서의 문구와 디자인을 바탕으로 다음 8페�
 1. INTRO - 가운데
 2. PROJECTS - Octoplug, Doll·Eye Pinball
 3. PROJECTS - Rolling Kimbaps, Namer
-4. HOW I WORK - 협업, 검증, AI 활용
+4. HOW I WORK - 현재 켜진 항목만 표시. 내용 파일의 `aiEnabled = true`로 AI 활용 항목을 다시 켤 수 있습니다.
 5. EXPERIENCE + CORE TOOLS
 6. PLAY STYLE + WHAT I'VE BUILT
 7. ABOUT ME

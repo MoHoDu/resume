@@ -305,6 +305,15 @@
 }
 .pdf-video-frame{display:none!important}
 #pdfDocument{display:none}
+/* Evidence images keep their full frame; links open a readable full-size copy. */
+.work-dashboard-media{background:#101319;min-height:0!important;aspect-ratio:auto!important;align-self:center}
+.work-dashboard-media::after{display:none}
+.work-story:has(+.work-story[hidden]){border-bottom:1px solid var(--line)}
+.work-dashboard-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:14px;padding:14px}
+.work-dashboard-gallery a{display:block;min-width:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.work-dashboard-gallery img{display:block;width:100%;height:auto}
+.work-dashboard-gallery a:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+@media screen and (max-width:680px){.work-dashboard-gallery{grid-template-columns:minmax(0,1fr)}}
 /* Readable copy and labels at both desktop and phone widths. */
 @media screen{
   .eyebrow,.work-number,.work-evidence dt,.tool-group h3,.tool-group h3 span,
