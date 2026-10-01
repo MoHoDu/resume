@@ -112,6 +112,8 @@
       workList.append(...visibleWork.map(story => story.cloneNode(true)));
       workList.style.gridTemplateRows = `repeat(${visibleWork.length}, minmax(0, 1fr))`;
       workList.querySelectorAll('button,iframe').forEach(element => element.remove());
+      workList.querySelectorAll('.work-dashboard-controls').forEach(element => element.remove());
+      workList.querySelectorAll('.work-dashboard-slide').forEach(element => element.hidden = false);
       const poster = workList.querySelector('.work-youtube-poster');
       if (poster && settings.interviewPoster) poster.src = settings.interviewPoster;
       page(4, 'pdf-work-page', [workHeader, workList]);

@@ -7,8 +7,8 @@
   <meta name="description" content="게임 디자이너 모호성의 포트폴리오와 이력서">
   <title>모호성 — Game Designer</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23090b10'/%3E%3Cpath d='M9 28V12h4l7 9 7-9h4v16h-5v-8l-6 7-6-7v8z' fill='%23c7ff5e'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=work-dashboard-1">
-  <link rel="stylesheet" href="pdf-pages.css?v=work-dashboard-1" media="print">
+  <link rel="stylesheet" href="styles.css?v=work-carousel-1">
+  <link rel="stylesheet" href="pdf-pages.css?v=work-carousel-1" media="print">
   <script>
     // 내용 파일의 새 버전을 매번 읽어 PDF에도 최신 문구가 들어가게 합니다.
     const contentVersion = Date.now();
@@ -21,7 +21,8 @@
   <script src="projects.js" defer></script>
   <script src="play-style.js" defer></script>
   <script src="work-interview.js?v=interview-2" defer></script>
-  <script src="pdf-export.js?v=work-dashboard-1" defer></script>
+  <script src="work-dashboard.js?v=1" defer></script>
+  <script src="pdf-export.js?v=work-carousel-1" defer></script>
 </head>
 <body>
   <main id="top">
@@ -128,10 +129,18 @@
         </article>
 
         <article class="work-story work-story-reverse">
-          <div class="work-story-media work-dashboard-media">
+          <div class="work-story-media work-dashboard-media" role="region" aria-roledescription="슬라이드" aria-label="Octoplug 테스트 대시보드">
             <div class="work-dashboard-gallery">
-              <a href="assets/dashboard_01.png" target="_blank" rel="noopener" aria-label="Octoplug 세션 재생 대시보드 크게 보기"><img src="assets/dashboard_01.png" alt="Octoplug 플레이 로그와 연결 상태를 보여주는 세션 재생 대시보드" loading="lazy" decoding="async"></a>
-              <a href="assets/dashboard_02.png" target="_blank" rel="noopener" aria-label="Octoplug 설문 분석 대시보드 크게 보기"><img src="assets/dashboard_02.png" alt="Octoplug 설문 점수, 체감 난이도와 참여자 피드백 분석 대시보드" loading="lazy" decoding="async"></a>
+              <a class="work-dashboard-slide" href="assets/dashboard_01.png" target="_blank" rel="noopener" aria-label="Octoplug 세션 재생 대시보드 크게 보기"><img src="assets/dashboard_01.png" alt="Octoplug 플레이 로그와 연결 상태를 보여주는 세션 재생 대시보드" loading="lazy" decoding="async"></a>
+              <a class="work-dashboard-slide" href="assets/dashboard_02.png" target="_blank" rel="noopener" aria-label="Octoplug 설문 분석 대시보드 크게 보기" hidden><img src="assets/dashboard_02.png" alt="Octoplug 설문 점수, 체감 난이도와 참여자 피드백 분석 대시보드" loading="lazy" decoding="async"></a>
+            </div>
+            <div class="work-dashboard-controls">
+              <span class="work-dashboard-count">01 / 02</span>
+              <div class="carousel-controls" aria-label="대시보드 이미지 제어">
+                <button class="control-button" type="button" data-dashboard-previous aria-label="이전 대시보드 이미지">←</button>
+                <button class="control-button pause-button" type="button" data-dashboard-pause aria-label="자동 재생 일시 정지">Ⅱ</button>
+                <button class="control-button" type="button" data-dashboard-next aria-label="다음 대시보드 이미지">→</button>
+              </div>
             </div>
           </div>
           <div class="work-story-copy">
