@@ -33,7 +33,7 @@ octoplugGithubUrl = https://github.com/MoHoDu/Octoplug
 octoplugVideoUrl =
 octoplugDetailUrl =
 
-# Doll.Eye Pinball
+# Doll·Eye Pinball
 dolleyeTitle = Doll·Eye Pinball
 dolleyeType = PINBALL · TEAM PROJECT
 dolleyePeriod = 2026.07 ~ 2026.08
