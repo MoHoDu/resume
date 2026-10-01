@@ -118,7 +118,9 @@
   .pdf-experience-page .experience-detail strong{font-size:19px}
   .pdf-experience-page .tool-group{padding:25px 18px}
   .pdf-experience-page .tool-group h3{font-size:13px;white-space:normal}
-  .pdf-experience-page .tool-slot{min-height:84px;padding:14px}
+  .pdf-experience-page .tool-slot{min-height:84px;padding:14px;align-items:start;align-content:start;column-gap:12px}
+  .pdf-experience-page .tool-glyph{align-self:start;margin-top:1px}
+  .pdf-experience-page .tool-slot strong{padding-top:3px}
   .pdf-experience-page .tool-slot strong{font-size:15px}
   .pdf-experience-page .tool-slot small{font-size:13px}
 
@@ -153,7 +155,8 @@
 
   .pdf-about-page .about-heading>p{font-size:17px}
   .pdf-about-page .about-qa{display:grid;grid-template-rows:repeat(3,1fr)}
-  .pdf-about-page .about-question{align-items:center;padding:18px 6px}
+  .pdf-about-page .about-question{align-items:start;padding:22px 6px}
+  .pdf-about-page .qa-mark,.pdf-about-page .qa-index{padding-top:8px}
   .pdf-about-page .about-question h3{font-size:22px}
   .pdf-about-page .about-question p{font-size:15px;line-height:1.55}
   .pdf-about-page .qa-answer-case,.pdf-about-page .qa-answer-key{color:#e4e6df}
